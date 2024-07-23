@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: #555;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+        }
+
+        .collapseee {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="collapseee m">
+        <div class="footerhead">
+            <div class="row">
+
+                <div class="col-2 col-m-12 col-p-12 col-t-12">
+                    <div class="footerlogo">
+                        <img src="./image/footer.jpg" alt="logo">
+
+                    </div>
+
+                </div>
+                <div class="col-10 col-m-12 col-p-12 col-t-12">
+                    <div class="suscribe">
+                        <input type="email" class="emailtype" placeholder="Your Email">
+                        <a href="#">SUSCRIBE</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <button type="button" class="collapsible">Open Collapsible</button>
+        <div class="content">
+            <div class="row">
+                <div class="col-3 col-m-6 col-p-12 col-t-12">
+                    <div class="Address">
+                        <h3>ADDRESS</h3>
+                    </div>
+
+                    <div class="detail">
+                        <p><i class="fa-solid fa-location-dot"></i>Making this the first true</p>
+                        <p><i class="fa-solid fa-phone"></i>Call: +01 1234567890</p>
+                        <p><i class="fa-solid fa-envelope"></i>EMAIL:DEMo@gmail.com</p>
+                    </div>
+                    <div class="socailmedia">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <button type="button" class="collapsible">Open Collapsible</button>
+        <div class="content">
+            <div class="col-3 col-m-6 col-p-12 col-t-12">
+                <div class="Address">
+                    <h3>USEFULL LINKS</h3>
+                </div>
+                <div class="Usefulllinks">
+                    <a href="#">HOME</a>
+                    <a href="#">ABOUT</a>
+                    <a href="#">DOCTOR</a>
+                    <a href="#">NEWS</a>
+                    <a href="#">TREATMENT</a>
+                    <a href="#">DOCTOR</a>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="collapsible">Open Collapsible</button>
+        <div class="content">
+            <div class="row">
+                <div class="col-3 col-m-6 col-p-12 col-t-12">
+                    <div class="Address">
+                        <h3>LETEST POST</h3>
+                    </div>
+                    <div class="smallbox">
+                        <div>
+                            <img src="./image/footer-1.png" alt="f">
+                            <p>Normal <br> Distribution</p>
+                        </div>
+                        <div>
+                            <img src="./image/footer-1.png" alt="f">
+                            <p>Normal <br> Distribution</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button type="button" class="collapsible">Open Collapsible</button>
+        <div class="content">
+            <div class="row">
+                <div class="col-3 col-m-6 col-p-12 col-t-12">
+                    <div class="Address">
+                        <h3>NEWS</h3>
+                    </div>
+                    <div class="smallbox">
+                        <div>
+                            <img src="./image/footer-1.png" alt="f">
+                            <p>Normal <br> Distribution</p>
+                        </div>
+                        <div>
+                            <img src="./image/footer-1.png" alt="f">
+                            <p>Normal <br> Distribution</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
